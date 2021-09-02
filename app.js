@@ -59,7 +59,6 @@ const books = book =>{
     // clear previous search list result
     container.textContent = '';
     // for each function
-    console.log(book);
     book.forEach(element => {
         const div = document.createElement('div');
         // dynamic image url
