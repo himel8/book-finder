@@ -55,7 +55,7 @@ const books = book =>{
                     <h5 class="card-title">${element.title}</h5>
                     <p class="card-text fw-bold text-success">Author: ${element.author_name}</p>
                     <p class="card-text">Publisher: ${element.publisher}</p>
-                    <p class="card-text"><small class="text-muted">Fist publish year: ${element.first_publish_year}</small></p>
+                    <p class="card-text"><small class="text-muted">Fist published year: ${element.first_publish_year}</small></p>
                 </div>
               </div>
             </div>
