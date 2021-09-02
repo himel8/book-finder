@@ -11,11 +11,12 @@ const toggleSearchResult = displayStyle =>{
 
 // input text function
 const searchBookText = () =>{
-    const inputField = document.getElementById('input-field');
     toggleSpinner('block');
     toggleSearchResult('none');
     // clear search not found result
     document.getElementById('search-not-found').style.display = 'none';
+    // get input value
+    const inputField = document.getElementById('input-field');
     searchBook(inputField.value.toLowerCase());
     inputField.value = '';
 }
@@ -58,6 +59,7 @@ const books = book =>{
     // clear previous search list result
     container.textContent = '';
     // for each function
+    console.log(book);
     book.forEach(element => {
         const div = document.createElement('div');
         // dynamic image url
@@ -69,8 +71,8 @@ const books = book =>{
                 <img class="custom-height" src="${imgUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${element.title}</h5>
-                    <p class="card-text fw-bold text-success">Author: ${element.author_name[0]}</p>
-                    <p class="card-text">Publisher: ${element.publisher[0]}</p>
+                    <p class="card-text fw-bold text-success">Author: ${element.author_name}</p>
+                    <p class="card-text">Publisher: ${element.publisher}</p>
                     <p class="card-text"><small class="text-muted">Fist published year: ${element.first_publish_year}</small></p>
                 </div>
               </div>
