@@ -62,6 +62,7 @@ const books = book =>{
         const div = document.createElement('div');
         // dynamic image url
         const imgUrl = `https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`;
+        // dynamic book card
         div.innerHTML = `
             <div class="col">
               <div class="card custom-card-height">
