@@ -33,6 +33,15 @@ const myObj = data =>{
     searchFound.innerHTML = `
         <p <small class="text-dark">${data.numFound} search result found</small></p> 
     `;
+    // search not found function
+    const searchNotFound = document.getElementById('search-not-found');
+    if(data.numFound === 0){
+        toggleSpinner('none');
+        toggleSearchResult('none');
+        searchNotFound.innerHTML = `
+        <h5> No Search Found. Try again</h5> 
+    `;
+    }
     // search list found function call
     books(data.docs);
 }
