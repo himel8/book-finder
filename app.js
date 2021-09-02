@@ -14,6 +14,8 @@ const searchBookText = () =>{
     const inputField = document.getElementById('input-field');
     toggleSpinner('block');
     toggleSearchResult('none');
+    // clear search not found result
+    document.getElementById('search-not-found').style.display = 'none';
     searchBook(inputField.value.toLowerCase());
     inputField.value = '';
 }
@@ -31,16 +33,20 @@ const myObj = data =>{
     // number of search found function 
     const searchFound = document.getElementById('search-found');
     searchFound.innerHTML = `
-        <p <small class="text-dark">${data.numFound} search result found</small></p> 
+        <p <small class="text-dark">${data.numFound} search result found of <span class="fw-bold">${data.q}</span></small></p> 
     `;
     // search not found function
     const searchNotFound = document.getElementById('search-not-found');
     if(data.numFound === 0){
         toggleSpinner('none');
         toggleSearchResult('none');
+        searchNotFound.style.display = 'block'
         searchNotFound.innerHTML = `
         <h5> No Search Found. Try again</h5> 
     `;
+    }else{
+        // clear search not found result 
+        searchNotFound.textContent = '';
     }
     // search list found function call
     books(data.docs);
@@ -49,13 +55,13 @@ const myObj = data =>{
 // search list found function
 const books = book =>{
     const container = document.getElementById('search-list');
+    // clear previous search list result
     container.textContent = '';
     // for each function
     book.forEach(element => {
         const div = document.createElement('div');
         // dynamic image url
-        const imgUrl = `https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`
-        console.log(imgUrl)
+        const imgUrl = `https://covers.openlibrary.org/b/id/${element.cover_i}-M.jpg`;
         div.innerHTML = `
             <div class="col">
               <div class="card custom-card-height">

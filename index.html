@@ -26,6 +26,7 @@
                 <input id="input-field" type="text" class="form-control" placeholder="Search your books...">
                 <button onclick="searchBookText()" class="btn btn-success" >Search</button>
             </div>
+            <!-- spinner section  -->
             <div id="spinner" class="custom-spinner">
                 <div class="spinner-border" role="status">
                     <span class="visually-hidden">Loading...</span>
@@ -34,8 +35,13 @@
             </div>
         </section>
         <section>
-              <div id="search-not-found"></div>
-              <div id="search-found"></div>
+            <!-- search not found section  -->
+            <div id="search-not-found"></div>
+
+            <!-- search found section  -->
+            <div id="search-found"></div>
+            
+            <!-- search list section  -->
               <div id="search-list" class="row row-cols-1 row-cols-md-3 g-4">
               </div>
         </section>
