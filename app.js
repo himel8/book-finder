@@ -70,8 +70,8 @@ const books = book =>{
                 <img class="custom-height" src="${imgUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${element.title}</h5>
-                    <p class="card-text fw-bold text-success">Author: ${element.author_name}</p>
-                    <p class="card-text">Publisher: ${element.publisher}</p>
+                    <p class="card-text fw-bold text-success">Author: ${element?.author_name?.[0]}</p>
+                    <p class="card-text">Publisher: ${element?.publisher?.[0]}</p>
                     <p class="card-text"><small class="text-muted">Fist published year: ${element.first_publish_year}</small></p>
                 </div>
               </div>
